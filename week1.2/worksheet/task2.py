@@ -20,7 +20,7 @@ if n % 2 == 1:
 else: 
         median = (numbers[n // 2 - 1] + numbers[n // 2]) / 2
 
-print(f"Minimum: {minimum}")
-print(f"Maximum: {maximum}")
-print(f"Mean: {mean}")
-print(f"Median: {median}")
+print(f"Minimum = {minimum}")
+print(f"Maximum = {maximum}")
+print(f"Mean = {mean}")
+print(f"Median = {median}")
