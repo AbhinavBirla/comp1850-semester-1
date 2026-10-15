@@ -9,7 +9,9 @@
 # hint: you could use .split() to break up by spaces
 # hint: watch out for empty lines that might give you empty strings
 
+
 # display the wordcount
+
 
 # Here are the word counts you should get:
 # story.txt - 290
