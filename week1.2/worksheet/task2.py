@@ -7,20 +7,20 @@ numbers = util.read_numbers()
 if len(numbers) == 0:
     sys.exit("Error: no numbers provided")
 
-    numbers.sort()
+numbers.sort()
 
-    minimum = min(numbers)
-    maximum = max(numbers)
-    mean = sum(numbers) / len(numbers)
+minimum = min(numbers)
+maximum = max(numbers)
+mean = sum(numbers) / len(numbers)
 
-    n = len(numbers)
+n = len(numbers)
 
-    if n % 2 == 1:
+if n % 2 == 1:
         median = numbers[n // 2]
-    else: 
+else: 
         median = (numbers[n // 2 - 1] + numbers[n // 2]) / 2
 
-    print(f"Minimum: {minimum}")
-    print(f"Maximum: {maximum}")
-    print(f"Mean: {mean}")
-    print(f"Median: {median}")
+print(f"Minimum: {minimum}")
+print(f"Maximum: {maximum}")
+print(f"Mean: {mean}")
+print(f"Median: {median}")
