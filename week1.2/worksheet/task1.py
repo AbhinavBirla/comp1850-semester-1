@@ -6,17 +6,16 @@ grade = input("Enter your grade (0-100): ")
 if not grade.isdecimal():
     sys.exit("Error: Grade must be an integer between 0 and 100")
 
-    grade = int(grade)
+grade = int(grade)
 
-    if grade < 0 or grade > 100:
+if grade < 0 or grade > 100:
         sys.exit("Error: Grade must be an integer between 0 and 100")
 
-    if grade >= 70:
+if grade >= 70:
         result = "Distinction"
-    elif grade >= 40:
+elif grade >= 40:
         result = "Pass"
-    else:
+else:
         result = "Fail"
 
-    print(f"{grade} is a {result}")
-    print("hello")
+print(f"{grade} is a {result}")
