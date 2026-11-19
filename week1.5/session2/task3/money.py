@@ -6,6 +6,7 @@ class Money:
     """
 
     def __init__(self, pounds, pence):
+
         """
         Creates a Money object, given the number of pounds and pence.
         """
@@ -15,11 +16,22 @@ class Money:
         # - the pence parameter is an integer
         # - pence is not negative and not greater than 99
         # Raise appropriate exceptions if any of these are violated
+        if not isinstance(pounds, int):
+            raise TypeError("pounds must be an integer")
 
+        if not isinstance(pence, int):
+            raise TypeError("pence must be an integer")
+
+        if pounds < 0:
+            raise ValueError("pounds cannot be negative")
+
+        if pence < 0 or pence > 99:
+            raise ValueError("pence must be between 0 and 99")
         self.pounds = pounds
         self.pence = pence
 
     def __str__(self):
+        return f"£{self.pounds}.{self.pence:02d}"
         """
         Returns a string representation of this Money.
         """
@@ -28,6 +40,16 @@ class Money:
         # Represent pence with a leading zero if needed (e.g. '05')
 
     def __add__(self, other):
+        if not isinstance(other, Money):
+            raise TypeError("other must be a Money object")
+
+        total_pounds = self.pounds + other.pounds
+        total_pence = self.pence + other.pence
+
+        total_pounds += total_pence // 100
+        total_pence = total_pence % 100
+
+        return Money(total_pounds, total_pence)
         """
         Adds this Money to another Money, returning the total.
         """

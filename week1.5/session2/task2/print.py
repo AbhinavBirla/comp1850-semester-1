@@ -6,3 +6,5 @@ p = Point(0, 0)
 print(p)
 # Write code here to create and print a Point object,
 # then create and print a Circle object
+c = Circle(5, Point(2, 3))
+print(c)
