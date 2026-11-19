@@ -3,7 +3,7 @@
 Equivalent classes for `comfort_level()`
 
 | Comfort level | Values |
-| --- | --- |
-| COLD | |
-| HOT  | |
-| OK   | |
+| lower boundary| upper boundary |
+| COLD |15.0 | N/A |
+| HOT  |25.1 | N/A |
+| OK   |15.1 | 25.0 |
