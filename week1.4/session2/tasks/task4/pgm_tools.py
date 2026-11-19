@@ -31,6 +31,14 @@ def writePGM( filename, image ):
     # open a file for writing
     # write the data in PGM format
     # don't forget the PGM code "P2"
+    with open(filename, "w") as f:
+        f.write("P2\n")
+        f.write(f"{width} {height}\n")
+        f.write(f"{max_gray}\n")
+
+        for row in pixels:
+            f.write(" ".join(str(pixel) for pixel in row))
+            f.write("\n")
 
     return
 
@@ -44,15 +52,20 @@ def invertPGM( image ):
 
     # your code
     # create a new pixel array of inverted data 
-    inverted = []  # you can use a similar nested comprehension to the readPGM() function
+    inverted = [
+        [255 - pixels[i][j] for j in range(width)]
+        for i in range(height)
+      ]  # you can use a similar nested comprehension to the readPGM() function
     
     return width,height,max_gray,inverted
 
 # code to test the PGM functions
 
-image = readPGM("images/feep.pgm")
+image = readPGM("week1.4/session2/tasks/task4/images/feep.pgm")
 
 print(f"Image with width {image[0]} and height {image[1]}")
 print(f"{image[3]}")
 
 # write further code to test your own functions
+inverted_image = invertPGM(image)
+writePGM("week1.4/session2/tasks/task4/images/feep.pgm", inverted_image)

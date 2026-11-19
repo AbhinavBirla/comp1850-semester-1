@@ -21,6 +21,20 @@ def most_frequent_string(votes):
     # Hint 1: You can complete this task with for loops or comprehensions 
     # Hint 2: Think about the properties of the various collection-types
 
+    if len(votes) == 0:
+        return (None, None)
+
+    most_common = votes[0]
+    highest_count = votes.count(votes[0])
+
+    for item in votes:
+        count = votes.count(item)
+        if count > highest_count:
+            highest_count = count
+            most_common = item
+
+    return (most_common, highest_count)
+
 
 fruit = ['date', 'apple', 'cherry', 'date', 'apple', 'apple', 'elderberry',
          'date', 'elderberry', 'elderberry', 'date', 'banana']
